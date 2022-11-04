@@ -4,9 +4,9 @@ const {
   scheduleNewLaunch,
   existsLaunchWithId,
   abortLaunchByID,
-} = require("./../../models/launch.model");
+} = require("../../models/launch.model");
 
-async function httpGetAllLaunches(req, req) {
+async function httpGetAllLaunches(req, res) {
   const { skip, limit } = getPagination(req.body);
   const launches = await getAllLaunches(skip, limit);
   return res.status(200).json(launches);
@@ -31,7 +31,7 @@ async function httpAddNewLaunches(req, res) {
   return req.status(201).json(launch);
 }
 
-async function httpAbortLaunch(req, res) {
+async function httpAbortLaunches(req, res) {
   const launchId = Number(req.params.id);
 
   const existsLaunch = await existsLaunchWithId(launchId);
@@ -55,6 +55,6 @@ async function httpAbortLaunch(req, res) {
 
 module.exports = {
   httpGetAllLaunches,
-  httpAddNewLaunch,
-  httpAbortLaunch,
+  httpAddNewLaunches,
+  httpAbortLaunches,
 };

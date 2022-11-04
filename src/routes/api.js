@@ -1,10 +1,10 @@
 const express = require("express");
 const api = express.Router();
 
-const lounchesRouter = require("./lounches/router");
-const planetsRouter = require("./planets/router");
+const lounchesRouter = require("./lounches/lounches.router");
+const planetsRouter = require("./planets/planets.router");
 
-api.use("/lounch", lounchesRouter);
-api.use("/planet", planetsRouter);
+api.use("/launches", lounchesRouter);
+api.use("/planetes", planetsRouter);
 
 module.exports = api;

@@ -6,7 +6,7 @@ const {
   httpGetAllLaunches,
   httpAddNewLaunches,
   httpAbortLaunches,
-} = require("./controller");
+} = require("./lounches.controller");
 
 lounchesRouter.get("/", httpGetAllLaunches);
 lounchesRouter.post("/", httpAddNewLaunches);
